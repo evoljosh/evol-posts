@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EVOL Posts</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <h1 class="logo">EVOL<span>Posts</span></h1>
+    <div id="nav-auth-area">
+      <!-- Filled in dynamically by JS depending on login state -->
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ===== AUTH SECTION (shown when logged out) ===== -->
+    <section id="auth-section" class="card">
+      <div class="auth-tabs">
+        <button class="tab-btn active" data-tab="login">Log In</button>
+        <button class="tab-btn" data-tab="signup">Sign Up</button>
+      </div>
+
+      <form id="login-form" class="auth-form">
+        <label>Username</label>
+        <input type="text" id="login-username" required />
+        <label>Password</label>
+        <input type="password" id="login-password" required />
+        <button type="submit" class="btn-primary">Log In</button>
+        <p class="form-message" id="login-message"></p>
+      </form>
+
+      <form id="signup-form" class="auth-form hidden">
+        <label>Username</label>
+        <input type="text" id="signup-username" required />
+        <label>Password</label>
+        <input type="password" id="signup-password" required />
+        <button type="submit" class="btn-primary">Sign Up</button>
+        <p class="form-message" id="signup-message"></p>
+      </form>
+    </section>
+
+    <!-- ===== POSTS SECTION (always visible) ===== -->
+    <section id="posts-section">
+
+      <!-- Create post form — only shown when logged in -->
+      <div id="create-post-card" class="card hidden">
+        <h2>Create a Post</h2>
+        <form id="create-post-form">
+          <input type="text" id="post-title" placeholder="Post title" required />
+          <textarea id="post-content" placeholder="What's on your mind?" required></textarea>
+          <button type="submit" class="btn-primary">Post</button>
+        </form>
+      </div>
+
+      <h2 class="section-heading">All Posts</h2>
+      <div id="posts-list">
+        <!-- Posts injected here by JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

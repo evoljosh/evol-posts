@@ -1,0 +1,17 @@
+// src/config/db.js
+// Handles connecting to MongoDB using Mongoose
+
+import mongoose from "mongoose";
+
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("MongoDB connected successfully");
+  } catch (error) {
+    console.error("MongoDB connection failed:", error.message);
+    // Exit the process if the database fails to connect
+    process.exit(1);
+  }
+};
+
+export default connectDB;
