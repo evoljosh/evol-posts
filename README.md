@@ -76,4 +76,4 @@ evol-posts/
 - User input is escaped on the frontend to prevent basic XSS
 
 ## Author
-Josh — Final Project, Web Programming 1
+Josh & Michaeljr— Final Project, Web Programming 1
